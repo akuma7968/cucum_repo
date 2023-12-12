@@ -13,6 +13,7 @@ public class BasePage {
 	public static CarBase carBase;
 	private WebElement mouseOverElement;
 
+	//For the local driver, we are assigning driver value obtained from selenium driver class
 	public BasePage() {
 
 		driver = SeleniumDriver.getDriver();

@@ -18,7 +18,9 @@ public class SeleniumDriver {
 	
 	
 	
-	
+	//Its creating an instance of itself;
+	//This is a common pattern used in implementation of Singleton design pattern
+	//This ensures that only one instance of "SeleniumDriver" is created and returned
 	private static SeleniumDriver seleniumDriver;
 	
 	private static WebDriver driver;
@@ -31,7 +33,7 @@ public class SeleniumDriver {
 	private FileInputStream fis;
 	
 	
-	
+	//The below constructor is a private constructor where we are fetching values from properties file and opening required browser
 	private SeleniumDriver() {
 		
 		
@@ -66,7 +68,7 @@ public class SeleniumDriver {
 		
 		if(config.getProperty("browser").equals("chrome")) {
 			
-			WebDriverManager.chromedriver().setup();
+//			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
 		}else if(config.getProperty("browser").equals("firefox")) {
@@ -83,7 +85,7 @@ public class SeleniumDriver {
 		
 	}
 	
-	
+	//the getDriver initializes driver after we call setUp driver which further calls constructor
 	public static WebDriver getDriver() {
 		return driver;
 	}
